@@ -79,6 +79,11 @@ namespace Codeite.Core.Xml
             _xmlSerializer.Serialize(stream, target, namespaces);
         }
 
+        public void Serialize(TextWriter textWriter, T target, XmlSerializerNamespaces namespaces = null)
+        {
+            _xmlSerializer.Serialize(textWriter, target, namespaces);
+        }
+
         public void Serialize(XmlWriter xmlWriter, T target, XmlSerializerNamespaces namespaces = null, string encodingStyle = null, string id = null)
         {
             _xmlSerializer.Serialize(xmlWriter, target, namespaces, encodingStyle, id);
