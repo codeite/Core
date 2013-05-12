@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeite.Core", "Codeite.Core\Codeite.Core.csproj", "{B62E4D7A-1141-4233-BCAD-99EBB29D6800}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeite.Core.Tests", "Codeite.Core.Tests\Codeite.Core.Tests.csproj", "{655BFEAE-F475-4A98-B319-8D468C8923A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{B62E4D7A-1141-4233-BCAD-99EBB29D6800}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B62E4D7A-1141-4233-BCAD-99EBB29D6800}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B62E4D7A-1141-4233-BCAD-99EBB29D6800}.Release|Any CPU.Build.0 = Release|Any CPU
+		{655BFEAE-F475-4A98-B319-8D468C8923A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{655BFEAE-F475-4A98-B319-8D468C8923A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{655BFEAE-F475-4A98-B319-8D468C8923A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{655BFEAE-F475-4A98-B319-8D468C8923A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
