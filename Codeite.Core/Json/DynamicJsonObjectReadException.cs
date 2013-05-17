@@ -2,7 +2,7 @@
 
 namespace Codeite.Core.Json
 {
-    internal class DynamicJsonObjectReadException : Exception
+    public class DynamicJsonObjectReadException : Exception
     {
         public DynamicJsonObjectReadException()
         {

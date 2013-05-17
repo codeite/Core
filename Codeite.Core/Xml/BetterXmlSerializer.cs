@@ -10,9 +10,9 @@ namespace Codeite.Core.Xml
     {
         private readonly XmlSerializer _xmlSerializer;
 
-        public BetterXmlSerializer(XmlAttributeOverrides overrides = null, Type[] extraTypes = null, XmlRootAttribute root = null, string defaultNamespace = null, string location = null, Evidence evidence = null)
+        public BetterXmlSerializer(XmlAttributeOverrides overrides = null, Type[] extraTypes = null, XmlRootAttribute root = null, string defaultNamespace = null, string location = null)
         {
-            _xmlSerializer = new XmlSerializer(typeof(T), overrides, extraTypes ?? new Type[0], root, defaultNamespace, location, evidence);
+            _xmlSerializer = new XmlSerializer(typeof(T), overrides, extraTypes ?? new Type[0], root, defaultNamespace, location);
         }
 
         public event XmlAttributeEventHandler UnknownAttribute

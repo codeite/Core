@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Json\ErrorMessageTests.cs" />
     <Compile Include="Json\JsonCannonicalizerTests.cs" />
     <Compile Include="Json\JsonDynamicTests.cs" />
     <Compile Include="SmartThreadingPoolTests.cs" />

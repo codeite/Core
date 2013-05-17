@@ -201,14 +201,14 @@ namespace Codeite.Core.Json
 
             while (reader.TokenType != JsonToken.EndObject)
             {
-                Assert(reader.TokenType == JsonToken.PropertyName, "JsonToken.PropertyName name expected but got: " + reader.TokenType);
+                Assert(reader.TokenType == JsonToken.PropertyName, "End of object or next property name expected but got: " + reader.TokenType);
                 var propertyName = (string)reader.Value;
                 reader.Read();
 
                 dictionary[propertyName] = ReadJsonValue(reader);
             }
 
-            Assert(reader.TokenType == JsonToken.EndObject, "JsonToken.EndObject name expected but got: " + reader.TokenType);
+            Assert(reader.TokenType == JsonToken.EndObject, "End of object expected but got: " + reader.TokenType);
             reader.Read();
 
             return dictionary;

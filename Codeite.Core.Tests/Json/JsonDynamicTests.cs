@@ -207,7 +207,7 @@ namespace Codeite.Core.Tests.Json
         public void CanReadArrayWithManyProperties()
         {
             // Arrange
-            var json = "[" + string.Join(", ", Enumerable.Range(0, 50).Select(i => i*2)) + "]";
+            var json = "[" + string.Join(", ", Enumerable.Range(0, 50).Select(i => i * 2)) + "]";
             Console.WriteLine(json);
 
             // Act
@@ -223,7 +223,7 @@ namespace Codeite.Core.Tests.Json
             {
                 ShouldBeTestExtensions.ShouldBeTypeOf<long>(jsonObject[i]);
                 long arrayValue = jsonObject[i];
-                arrayValue.ShouldBe(i*2);
+                arrayValue.ShouldBe(i * 2);
             }
         }
 
