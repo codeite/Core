@@ -190,7 +190,7 @@ namespace Codeite.Core.Json
                 case JsonToken.Date:
                 case JsonToken.Bytes:
                 default:
-                    throw new ArgumentOutOfRangeException("reader.TokenType", reader.TokenType.ToString());
+                    throw new DynamicJsonObjectReadException("Expected value but got: "+ reader.TokenType.ToString());
             }
         }
 
