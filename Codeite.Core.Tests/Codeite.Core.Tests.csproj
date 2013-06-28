@@ -57,6 +57,7 @@
     <Compile Include="Json\ErrorMessageTests.cs" />
     <Compile Include="Json\JsonCannonicalizerTests.cs" />
     <Compile Include="Json\JsonDynamicTests.cs" />
+    <Compile Include="Json\JsonPathTests.cs" />
     <Compile Include="SmartThreadingPoolTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
