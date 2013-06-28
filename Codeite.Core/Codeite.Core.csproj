@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activation\ActivatorHelper.cs" />
     <Compile Include="Json\DynamicJsonObjectReadException.cs" />
     <Compile Include="Json\JsonCannonicalizer.cs" />
     <Compile Include="Json\DynamicJsonObject.cs" />
