@@ -108,13 +108,37 @@ namespace Codeite.Core.Json
                  builder.Append(jsonObject as string);
                  builder.Append("\"");
              }
-             else if (jsonObject is long || jsonObject is int || jsonObject is short || jsonObject is sbyte)
+             else if (jsonObject is long )
              {
                  builder.Append((long)jsonObject);
              }
-             else if (jsonObject is ulong || jsonObject is uint || jsonObject is ushort || jsonObject is byte)
+             else if (jsonObject is int)
+             {
+                 builder.Append((long)(int)jsonObject);
+             }
+             else if (jsonObject is short )
+             {
+                 builder.Append((long)(short)jsonObject);
+             }
+             else if ( jsonObject is sbyte)
+             {
+                 builder.Append((long)(sbyte)jsonObject);
+             }
+             else if (jsonObject is ulong)
              {
                  builder.Append((ulong)jsonObject);
+             }
+             else if (jsonObject is uint)
+             {
+                 builder.Append((long)(uint)jsonObject);
+             }
+             else if (jsonObject is ushort)
+             {
+                 builder.Append((long)(ushort)jsonObject);
+             }
+             else if (jsonObject is byte)
+             {
+                 builder.Append((long)(byte)jsonObject);
              }
              else if (jsonObject is float || jsonObject is double || jsonObject is decimal)
              {
