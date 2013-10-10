@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Activation\ActivatorHelper.cs" />
     <Compile Include="Json\DynamicJsonObjectReadException.cs" />
+    <Compile Include="Json\DynamicXmlObject.cs" />
     <Compile Include="Json\JsonCannonicalizer.cs" />
     <Compile Include="Json\DynamicJsonObject.cs" />
     <Compile Include="Threading\SmartThreadPool.cs" />

@@ -63,18 +63,17 @@ namespace Codeite.Core.Json
             builder.Append("]");
         }
 
-
         public static object ToJsonString(this object jsonObject, StringBuilder builder = null)
         {
-            return WrapBuilder(jsonObject, false, builder);
+            return WrapJsonBuilder(jsonObject, false, builder);
         }
 
         public static string ToCannonicalString(this object jsonObject, StringBuilder builder = null)
         {
-            return WrapBuilder(jsonObject, true, builder);
+            return WrapJsonBuilder(jsonObject, true, builder);
         }
 
-        private static string WrapBuilder(this object jsonObject, bool cannonical, StringBuilder builder = null)
+        private static string WrapJsonBuilder(this object jsonObject, bool cannonical, StringBuilder builder = null)
         {
             bool madeBuilder = (builder == null);
             if (madeBuilder)
@@ -82,7 +81,7 @@ namespace Codeite.Core.Json
                 builder = new StringBuilder();
             }
 
-            ToStringCommon(jsonObject, cannonical, builder);
+            ToJsonStringCommon(jsonObject, cannonical, builder);
 
             if (madeBuilder)
             {
@@ -92,51 +91,75 @@ namespace Codeite.Core.Json
             return null;
         }
 
-        private static void ToStringCommon(this object jsonObject, bool cannonical, StringBuilder builder)
+        private static void ToJsonStringCommon(this object jsonObject, bool cannonical, StringBuilder builder)
         {
-             if (jsonObject is IEnumerable<KeyValuePair<string, dynamic>>)
-             {
-                 ObjectToCannonicalString(jsonObject as IEnumerable<KeyValuePair<string, dynamic>>, cannonical, builder);
-             }
-             else if (jsonObject is IEnumerable<dynamic>)
-             {
-                 ArrayToCannonicalString(jsonObject as IEnumerable<dynamic>, builder);
-             }
-             else if (jsonObject is string)
-             {
-                 builder.Append("\"");
-                 builder.Append(jsonObject as string);
-                 builder.Append("\"");
-             }
-             else if (jsonObject is long || jsonObject is int || jsonObject is short || jsonObject is sbyte)
-             {
-                 builder.Append((long)jsonObject);
-             }
-             else if (jsonObject is ulong || jsonObject is uint || jsonObject is ushort || jsonObject is byte)
-             {
-                 builder.Append((ulong)jsonObject);
-             }
-             else if (jsonObject is float || jsonObject is double || jsonObject is decimal)
-             {
-                 builder.Append(jsonObject);
-             }
-             else if (jsonObject is BigInteger)
-             {
-                 builder.Append(jsonObject);
-             }
-             else if (jsonObject is bool)
-             {
-                 builder.Append(((bool)jsonObject)?"true":"false");
-             }
-             else if (jsonObject == null)
-             {
-                 builder.Append("null");
-             }
-             else
-             {
-                 throw new Exception("What do I do with a "+jsonObject.GetType());
-             }
-         }
+            if (jsonObject is IEnumerable<KeyValuePair<string, dynamic>>)
+            {
+                ObjectToCannonicalString(jsonObject as IEnumerable<KeyValuePair<string, dynamic>>, cannonical, builder);
+            }
+            else if (jsonObject is IEnumerable<dynamic>)
+            {
+                ArrayToCannonicalString(jsonObject as IEnumerable<dynamic>, builder);
+            }
+            else if (jsonObject is string)
+            {
+                builder.Append("\"");
+                builder.Append(jsonObject as string);
+                builder.Append("\"");
+            }
+            else if (jsonObject is long)
+            {
+                builder.Append((long)jsonObject);
+            }
+            else if (jsonObject is int)
+            {
+                builder.Append((int)jsonObject);
+            }
+            else if (jsonObject is short)
+            {
+                builder.Append((short)jsonObject);
+            }
+            else if (jsonObject is sbyte)
+            {
+                builder.Append((sbyte)jsonObject);
+            }
+            else if (jsonObject is ulong)
+            {
+                builder.Append((ulong)jsonObject);
+            }
+            else if (jsonObject is uint)
+            {
+                builder.Append((uint)jsonObject);
+            }
+            else if (jsonObject is ushort)
+            {
+                builder.Append((ushort)jsonObject);
+            }
+            else if (jsonObject is byte)
+            {
+                builder.Append((byte)jsonObject);
+            }
+            else if (jsonObject is float || jsonObject is double || jsonObject is decimal)
+            {
+                builder.Append(jsonObject);
+            }
+            else if (jsonObject is BigInteger)
+            {
+                builder.Append(jsonObject);
+            }
+            else if (jsonObject is bool)
+            {
+                builder.Append(((bool)jsonObject) ? "true" : "false");
+            }
+            else if (jsonObject == null)
+            {
+                builder.Append("null");
+            }
+            else
+            {
+                throw new Exception("What do I do with a " + jsonObject.GetType());
+            }
+        }
 
         public static dynamic ReadJson(string json)
         {
